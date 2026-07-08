@@ -1,9 +1,10 @@
 import * as vscode from 'vscode';
 import { Track } from "./models";
 import { formatCueTracks } from "./formatter";
+import { parse1001Tracklist } from "./parser";
 
 export function activate(context: vscode.ExtensionContext) {
-  const disposable = vscode.commands.registerCommand('cue-tools.insertSampleTrack', async () => {
+  const disposable = vscode.commands.registerCommand('cue-tools.importFromClipboard', async () => {
     const editor = vscode.window.activeTextEditor;
 
     if (!editor) {
@@ -11,20 +12,9 @@ export function activate(context: vscode.ExtensionContext) {
       return;
     }
 
-    const tracks: Track[] = [
-        {
-            number: 1,
-            timestamp: "00:00:00",
-            performer: "ChatGPT",
-            title: "Hello World [Mixed]",
-            withTracks: [
-                {
-                    performer: "Example Artist",
-                    title: "Example Acappella"
-                }
-            ]
-        }
-    ];
+    const clipboard = await vscode.env.clipboard.readText();
+
+    const tracks = parse1001Tracklist(clipboard);
 
     const cueText = formatCueTracks(tracks);
 

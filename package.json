@@ -13,8 +13,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "cue-tools.insertSampleTrack",
-        "title": "Cue Tools: Insert Sample Track"
+        "command": "cue-tools.importFromClipboard",
+        "title": "Cue Tools: Import 1001Tracklists from Clipboard"
       }
     ]
   },
