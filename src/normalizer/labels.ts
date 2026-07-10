@@ -1,0 +1,22 @@
+export const KNOWN_LABELS = [
+    "ARMADA",
+    "AXTONE",
+    "BLACK HOLE",
+    "COLDHARBOUR",
+    "DIM MAK",
+    "FREE",
+    "GLASSNOTE",
+    "HMG",
+    "ISLAND DEF JAM (UMG)",
+    "MUSICHUB",
+    "PARLOPHONE (WARNER MUSIC)",
+    "PERFECTO FLUORO",
+    "PRYDA",
+    "PWL",
+    "REVEALED",
+    "SHEFFIELD TUNES (KONTOR)",
+    "SOUKSONIC/STMPD",
+    "SPINNIN'",
+    "STMPD",
+    "THE END OF GENESYS/INTERSCOPE"
+].sort((a, b) => b.length - a.length);

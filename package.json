@@ -2,7 +2,7 @@
   "name": "cue-tools",
   "displayName": "cue-tools",
   "description": "Tools for creating and editing CUE sheets",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.125.0"
   },

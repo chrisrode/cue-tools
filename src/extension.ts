@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { Track } from "./models";
 import { formatCueTracks } from "./formatter";
 import { parse1001Tracklist } from "./parser";
+import { normalizeTracks } from "./normalizer";
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand('cue-tools.importFromClipboard', async () => {
@@ -13,10 +14,9 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
     const clipboard = await vscode.env.clipboard.readText();
-
-    const tracks = parse1001Tracklist(clipboard);
-
-    const cueText = formatCueTracks(tracks);
+    const parsedTracks = parse1001Tracklist(clipboard);
+    const normalizedTracks = normalizeTracks(parsedTracks);
+    const cueText = formatCueTracks(normalizedTracks);
 
     await editor.edit(editBuilder => {
         editBuilder.insert(editor.selection.active, cueText);

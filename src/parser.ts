@@ -10,9 +10,32 @@ export function parse1001Tracklist(text: string): Track[] {
 
     const tracks: Track[] = [];
     let i = 0;
+    let currentTrack: Track | undefined;
+    let expectingWithTrack = false;
 
     while (i < lines.length) {
         const line = lines[i];
+
+        if (classifyLine(line) === LineType.With) {
+            expectingWithTrack = true;
+            i++;
+            continue;
+        }
+
+        if (expectingWithTrack && currentTrack && classifyLine(line) === LineType.Track) {
+            const parsed = parseTrackLine(line);
+
+            if (parsed) {
+                currentTrack.withTracks.push({
+                    performer: parsed.performer,
+                    title: parsed.title
+                });
+            }
+
+            expectingWithTrack = false;
+            i++;
+            continue;
+        }
 
         if (classifyLine(line) !== LineType.TrackNumber) {
             i++;
@@ -37,14 +60,28 @@ export function parse1001Tracklist(text: string): Track[] {
 
         const parsed = parseTrackLine(trackLine);
 
+        if (expectingWithTrack && parsed && currentTrack) {
+            currentTrack.withTracks.push({
+                performer: parsed.performer,
+                title: parsed.title
+            });
+
+            expectingWithTrack = false;
+            i = trackLineIndex + 1;
+            continue;
+        }
+
         if (parsed) {
-            tracks.push({
+            const track: Track = {
                 number,
                 timestamp,
                 performer: parsed.performer,
                 title: parsed.title,
                 withTracks: []
-            });
+            };
+
+            tracks.push(track);
+            currentTrack = track;
         }
 
         i = trackLineIndex + 1;
@@ -80,37 +117,8 @@ function parseTrackLine(line: string): { performer: string; title: string } | un
     const performer = line.substring(0, separator).trim();
     let title = line.substring(separator + 3).trim();
 
-    title = stripLikelyLabel(title);
-
     return {
         performer,
         title
     };
-}
-
-function stripLikelyLabel(title: string): string {
-    const knownLabels = [
-        "SOUKSONIC/STMPD",
-        "DIM MAK",
-        "STMPD",
-        "HMG",
-        "ARMADA",
-        "REVEALED",
-        "SPINNIN'",
-        "BLACK HOLE",
-        "COLDHARBOUR",
-        "PRYDA",
-        "AXTONE",
-        "FREE"
-    ];
-
-    for (const label of knownLabels.sort((a, b) => b.length - a.length)) {
-        if (title.endsWith(` ${label}`)) {
-            return title.slice(0, -label.length).trim();
-        }
-    }
-
-    return title
-        .replace(/\s{2,}[A-Z0-9&'().:/ -]+$/u, "")
-        .trim();
 }

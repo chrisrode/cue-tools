@@ -6,15 +6,20 @@ export function formatCueTracks(tracks: Track[]): string {
 
     for (const track of tracks) {
 
+        const performers = [
+            track.performer,
+            ...track.withTracks.map(t => t.performer)
+        ].join(" / ");
+
+        const titles = [
+            track.title,
+            ...track.withTracks.map(t => t.title)
+        ].join(" / ");
+
         lines.push(`TRACK ${track.number.toString().padStart(2, "0")} AUDIO`);
-        lines.push(`  TITLE "${ensureMixed(track.title)}"`);
-        lines.push(`  PERFORMER "${track.performer}"`);
+        lines.push(`  TITLE "${ensureMixed(titles)}"`);
+        lines.push(`  PERFORMER "${performers}"`);
         lines.push(`  INDEX 01 ${track.timestamp}`);
-
-        for (const withTrack of track.withTracks) {
-
-            lines.push(`  REM WITHTRACK "${withTrack.performer} - ${withTrack.title}"`);
-        }
     }
 
     return lines.join("\n");
