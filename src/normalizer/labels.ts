@@ -18,5 +18,6 @@ export const KNOWN_LABELS = [
     "SOUKSONIC/STMPD",
     "SPINNIN'",
     "STMPD",
-    "THE END OF GENESYS/INTERSCOPE"
+    "THE END OF GENESYS/INTERSCOPE",
+    "TRIPOLI TRAX"
 ].sort((a, b) => b.length - a.length);

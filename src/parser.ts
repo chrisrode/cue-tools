@@ -1,75 +1,84 @@
 import { Track } from "./models";
-import { classifyLine } from "./classifier";
 import { LineType } from "./linetypes";
+import { Token } from "./token";
+import { tokenize } from "./tokenizer";
 
 export function parse1001Tracklist(text: string): Track[] {
-    const lines = text
-        .split(/\r?\n/)
-        .map(line => line.trim())
-        .filter(line => line.length > 0);
+    const tokens = tokenize(text);
+    return new Parser(tokens).parse();
+}
 
-    const tracks: Track[] = [];
-    let i = 0;
-    let currentTrack: Track | undefined;
-    let expectingWithTrack = false;
+class Parser {
+    private readonly tokens: Token[];
+    private index = 0;
 
-    while (i < lines.length) {
-        const line = lines[i];
+    private readonly tracks: Track[] = [];
+    private currentTrack: Track | undefined;
+    private expectingWithTrack = false;
 
-        if (classifyLine(line) === LineType.With) {
-            expectingWithTrack = true;
-            i++;
-            continue;
-        }
+    constructor(tokens: Token[]) {
+        this.tokens = tokens;
+    }
 
-        if (expectingWithTrack && currentTrack && classifyLine(line) === LineType.Track) {
-            const parsed = parseTrackLine(line);
+    public parse(): Track[] {
+        while (!this.atEnd()) {
+            const token = this.current();
 
-            if (parsed) {
-                currentTrack.withTracks.push({
-                    performer: parsed.performer,
-                    title: parsed.title
-                });
+            if (!token) {
+                break;
             }
 
-            expectingWithTrack = false;
-            i++;
-            continue;
+            switch (token.type) {
+                case LineType.With:
+                    this.expectingWithTrack = true;
+                    this.advance();
+                    break;
+
+                case LineType.TrackNumber:
+                    this.parseTrack();
+                    break;
+
+                case LineType.Track:
+                    if (this.expectingWithTrack && this.currentTrack) {
+                        this.parseWithTrack();
+                    } else {
+                        this.advance();
+                    }
+                    break;
+
+                default:
+                    this.advance();
+                    break;
+            }
         }
 
-        if (classifyLine(line) !== LineType.TrackNumber) {
-            i++;
-            continue;
+        return this.tracks;
+    }
+
+    private parseTrack(): void {
+        const numberToken = this.current();
+
+        if (!numberToken) {
+            return;
         }
 
-        const number = parseInt(line, 10);
+        const number = parseInt(numberToken.text, 10);
         let timestamp = "00:00:00";
-        let trackLineIndex = i + 1;
 
-        if (classifyLine(lines[i + 1] ?? "") === LineType.Timestamp) {
-            timestamp = normalizeTimestamp(lines[i + 1]);
-            trackLineIndex = i + 2;
+        this.advance();
+
+        if (this.current()?.type === LineType.Timestamp) {
+            timestamp = this.normalizeTimestamp(this.current()!.text);
+            this.advance();
         }
 
-        const trackLine = lines[trackLineIndex];
+        const trackToken = this.current();
 
-        if (!trackLine) {
-            i++;
-            continue;
+        if (!trackToken || trackToken.type !== LineType.Track) {
+            return;
         }
 
-        const parsed = parseTrackLine(trackLine);
-
-        if (expectingWithTrack && parsed && currentTrack) {
-            currentTrack.withTracks.push({
-                performer: parsed.performer,
-                title: parsed.title
-            });
-
-            expectingWithTrack = false;
-            i = trackLineIndex + 1;
-            continue;
-        }
+        const parsed = this.parseTrackLine(trackToken.text);
 
         if (parsed) {
             const track: Track = {
@@ -80,45 +89,89 @@ export function parse1001Tracklist(text: string): Track[] {
                 withTracks: []
             };
 
-            tracks.push(track);
-            currentTrack = track;
+            this.tracks.push(track);
+            this.currentTrack = track;
         }
 
-        i = trackLineIndex + 1;
+        this.advance();
     }
 
-    return tracks;
-}
+    private parseWithTrack(): void {
+        const token = this.current();
 
-function normalizeTimestamp(timestamp: string): string {
-    const parts = timestamp.split(":").map(Number);
+        if (!token || token.type !== LineType.Track || !this.currentTrack) {
+            this.expectingWithTrack = false;
+            return;
+        }
 
-    if (parts.length === 2) {
-        const [minutes, seconds] = parts;
-        return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}:00`;
+        const parsed = this.parseTrackLine(token.text);
+
+        if (parsed) {
+            this.currentTrack.withTracks.push({
+                performer: parsed.performer,
+                title: parsed.title
+            });
+        }
+
+        this.expectingWithTrack = false;
+        this.advance();
     }
 
-    if (parts.length === 3) {
-        const [hours, minutes, seconds] = parts;
-        const totalMinutes = hours * 60 + minutes;
-        return `${totalMinutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}:00`;
+    private parseTrackLine(
+        line: string
+    ): { performer: string; title: string } | undefined {
+        const separator = line.indexOf(" - ");
+
+        if (separator < 0) {
+            return undefined;
+        }
+
+        return {
+            performer: line.substring(0, separator).trim(),
+            title: line.substring(separator + 3).trim()
+        };
     }
 
-    return timestamp;
-}
+    private normalizeTimestamp(timestamp: string): string {
+        const parts = timestamp.split(":").map(Number);
 
-function parseTrackLine(line: string): { performer: string; title: string } | undefined {
-    const separator = line.indexOf(" - ");
+        if (parts.length === 2) {
+            const [minutes, seconds] = parts;
 
-    if (separator < 0) {
-        return undefined;
+            return (
+                `${minutes.toString().padStart(2, "0")}:` +
+                `${seconds.toString().padStart(2, "0")}:00`
+            );
+        }
+
+        if (parts.length === 3) {
+            const [hours, minutes, seconds] = parts;
+            const totalMinutes = hours * 60 + minutes;
+
+            return (
+                `${totalMinutes.toString().padStart(2, "0")}:` +
+                `${seconds.toString().padStart(2, "0")}:00`
+            );
+        }
+
+        return timestamp;
     }
 
-    const performer = line.substring(0, separator).trim();
-    let title = line.substring(separator + 3).trim();
+    private current(): Token | undefined {
+        return this.tokens[this.index];
+    }
 
-    return {
-        performer,
-        title
-    };
+    private peek(offset = 1): Token | undefined {
+       return this.tokens[this.index + offset];
+    }   
+
+    private advance(): Token | undefined {
+        const token = this.current();
+        this.index++;
+        return token;
+    }
+
+    private atEnd(): boolean {
+        return this.index >= this.tokens.length;
+    }
 }
