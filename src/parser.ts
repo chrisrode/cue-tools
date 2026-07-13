@@ -2,10 +2,34 @@ import { Track } from "./models";
 import { LineType } from "./linetypes";
 import { Token } from "./token";
 import { tokenize } from "./tokenizer";
+import {
+    createImportReport,
+    ImportReport,
+    incrementCount
+} from "./importReport";
+import { extractTracklistMetadata } from "./metadataExtractor";
+import { TracklistMetadata } from "./tracklistMetadata";
 
-export function parse1001Tracklist(text: string): Track[] {
+export interface ParseResult {
+    tracks: Track[];
+    report: ImportReport;
+    metadata: TracklistMetadata;
+}
+
+interface ParserResult {
+    tracks: Track[];
+    report: ImportReport;
+}
+
+export function parseTracklist(text: string): ParseResult {
     const tokens = tokenize(text);
-    return new Parser(tokens).parse();
+    const metadata = extractTracklistMetadata(tokens);
+    const result = new Parser(tokens).parse();
+
+    return {
+        ...result,
+        metadata
+    };
 }
 
 class Parser {
@@ -16,11 +40,13 @@ class Parser {
     private currentTrack: Track | undefined;
     private expectingWithTrack = false;
 
+    private readonly report = createImportReport();
+
     constructor(tokens: Token[]) {
         this.tokens = tokens;
     }
 
-    public parse(): Track[] {
+    public parse(): ParserResult {
         while (!this.atEnd()) {
             const token = this.current();
 
@@ -47,12 +73,23 @@ class Parser {
                     break;
 
                 default:
+                    this.recordIgnoredToken(token);
                     this.advance();
                     break;
             }
         }
 
-        return this.tracks;
+        this.report.importedTracks = this.tracks.length;
+
+        this.report.importedWithTracks = this.tracks.reduce(
+            (total, track) => total + track.withTracks.length,
+            0
+        );
+
+        return {
+            tracks: this.tracks,
+            report: this.report
+        };
     }
 
     private parseTrack(): void {
@@ -173,5 +210,27 @@ class Parser {
 
     private atEnd(): boolean {
         return this.index >= this.tokens.length;
+    }
+
+    private recordIgnoredToken(token: Token): void {
+        if (token.type === LineType.Unknown) {
+            this.recordUnknownWithContext();
+            return;
+        }
+
+        incrementCount(this.report.ignoredLineTypes, token.type);
+    }
+
+    private recordUnknownWithContext(): void {
+        const previous = this.tokens[this.index - 1]?.text ?? "<start>";
+        const current = this.tokens[this.index]?.text ?? "<missing>";
+        const next = this.tokens[this.index + 1]?.text ?? "<end>";
+
+        const description =
+            `Previous: ${previous}\n` +
+            `Unknown:  ${current}\n` +
+            `Next:     ${next}`;
+
+        incrementCount(this.report.ignoredLines, description);
     }
 }

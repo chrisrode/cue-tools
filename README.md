@@ -12,6 +12,14 @@ For example if there is an image subfolder under your extension project workspac
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
+## Development
+
+If you rename or move TypeScript source files,
+delete the `out` directory before compiling.
+
+TypeScript does not remove obsolete compiled files,
+which can lead to stale modules being executed.
+
 ## Requirements
 
 If you have any requirements or dependencies, add a section describing those and how to install and configure them.

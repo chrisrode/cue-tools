@@ -2,6 +2,7 @@ export const KNOWN_LABELS = [
     "ARMADA",
     "AXTONE",
     "BLACK HOLE",
+    "CAPTIVE SOUL",
     "COLDHARBOUR",
     "DIM MAK",
     "FREE",

@@ -1,0 +1,107 @@
+import { LineType } from "./linetypes";
+import { KNOWN_PAGE_METADATA } from "./pageMetadata";
+
+export function classifyLine(line: string): LineType {
+    if (/^\d{2}$/u.test(line)) {
+        return LineType.TrackNumber;
+    }
+
+    if (
+        /^\d{1,2}:\d{2}$/u.test(line) ||
+        /^\d{1,2}:\d{2}:\d{2}$/u.test(line)
+    ) {
+        return LineType.Timestamp;
+    }
+
+    if (line === "w/") {
+        return LineType.With;
+    }
+
+    if (line === "/") {
+        return LineType.ContributorSeparator;
+    }
+
+    if (/^artwork placeholder$/iu.test(line)) {
+        return LineType.ArtworkPlaceholder;
+    }
+
+    if (line.endsWith(" Artwork")) {
+        return LineType.Artwork;
+    }
+
+    if (/^Save\s+\d+$/iu.test(line)) {
+        return LineType.SaveCount;
+    }
+
+    if (/^Pre-Save\s+\d+$/iu.test(line)) {
+        return LineType.PreSaveCount;
+    }
+
+    if (/^[\p{L}\p{N}_.-]+\([\d.,]+[kKmM]?\)$/u.test(line)) {
+        return LineType.ContributorSummary;
+    }
+
+    if (/^\([\d.,]+[kKmM]?\)$/u.test(line)) {
+        return LineType.PopularityCount;
+    }
+
+    if (/^\d+\s+linked positions? found$/iu.test(line)) {
+        return LineType.LinkedPositions;
+    }
+
+    if (/^Show$/iu.test(line)) {
+        return LineType.Show;
+    }
+
+    if (line.includes(" - ")) {
+        return LineType.Track;
+    }
+
+    if (/^\d+$/u.test(line)) {
+        return LineType.NumericCount;
+    }
+
+    if (/^\d+\s*\/\s*\d+$/u.test(line)) {
+        return LineType.FractionCount;
+    }
+
+    if (/^\d{4}#\d+$/u.test(line)) {
+        return LineType.ChartRank;
+    }
+
+    if (
+        /^(?:(?:\d+)\s+hours?\s+)?(?:\d+)\s+minutes?\s+(?:\d+)\s+seconds$/iu.test(line)
+    ) {
+        return LineType.Duration;
+    }
+
+    if (/^\d+\s+(?:minutes?|hours?|days?|months?|years?)\s+ago$/iu.test(line)) {
+        return LineType.RelativeTime;
+    }
+
+    if (/^(?:https?:\/\/|1001\.tl\/)\S+$/iu.test(line)) {
+        return LineType.Url;
+    }
+
+    if (
+        /^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s.+GMT$/iu.test(line)
+    ) {
+        return LineType.PostedDate;
+    }
+
+    if (/^\d+\s+users?\s*\+\s*\d+\s+guests?$/iu.test(line)) {
+        return LineType.AudienceCount;
+    }
+
+    if (isKnownPageMetadata(line)) {
+        return LineType.PageMetadata;
+    }
+
+    return LineType.Unknown;
+}
+
+function isKnownPageMetadata(line: string): boolean {
+    const withoutCount = line.replace(/\s+\(\d+\)$/u, "");
+
+    return KNOWN_PAGE_METADATA.has(withoutCount);
+}

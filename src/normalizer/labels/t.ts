@@ -1,0 +1,4 @@
+export const T_LABELS = [
+    "THE END OF GENESYS/INTERSCOPE",
+    "TRIPOLI TRAX"
+];
