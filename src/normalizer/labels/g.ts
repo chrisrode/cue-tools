@@ -1,3 +1,4 @@
 export const G_LABELS = [
-    "GLASSNOTE"
+    "GLASSNOTE",
+    "GUN RECORDS"
 ];

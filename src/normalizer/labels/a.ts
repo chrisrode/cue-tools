@@ -1,4 +1,11 @@
 export const A_LABELS = [
+    "AFTERDARK (BLACK HOLE)",
+    "AFTERLIFE/INTERSCOPE",
+    "AMERICAN RECORDINGS",
+    "ANJUNABEATS",
+    "ARCANE",
     "ARMADA",
+    "ASOT (ARMADA)",
+    "ATLANTIC [WARNER MUSIC]",
     "AXTONE"
 ];

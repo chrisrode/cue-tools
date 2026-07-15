@@ -1,1 +1,4 @@
-export const V_LABELS: string[] = [];
+export const V_LABELS: string[] = [
+    "VERKNIPT",
+    "VISION"
+];

@@ -1,3 +1,6 @@
 export const B_LABELS = [
-    "BLACK HOLE"
+    "BIG BEAT [ATLANTIC]",
+    "BLACK HOLE",
+    "BONZAI",
+    "BOOMINATI WORLDWIDE"
 ];

@@ -1,3 +1,8 @@
 export const I_LABELS = [
-    "ISLAND DEF JAM (UMG)"
+    "INTERLUDE",
+    "INTERSCOPE",
+    "ISLAND DEF JAM (UMG)",
+    "ISLAND [UMG]",
+    "ISLAND/WALL",
+    "ITH"
 ];

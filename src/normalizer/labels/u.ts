@@ -1,1 +1,4 @@
-export const U_LABELS: string[] = [];
+export const U_LABELS: string[] = [
+    "ULTRA",
+    "UMG"
+];

@@ -1,6 +1,11 @@
 import { LineType } from "./linetypes";
 
+export type ImportSource =
+    | "plain-text"
+    | "structured-json";
+
 export interface ImportReport {
+    source: ImportSource;
     importedTracks: number;
     importedWithTracks: number;
     identifiedTracks: number;
@@ -8,8 +13,11 @@ export interface ImportReport {
     ignoredLines: Map<string, number>;
 }
 
-export function createImportReport(): ImportReport {
+export function createImportReport(
+    source: ImportSource = "plain-text"
+): ImportReport {
     return {
+        source,
         importedTracks: 0,
         importedWithTracks: 0,
         identifiedTracks: 0,
@@ -22,5 +30,8 @@ export function incrementCount<T>(
     values: Map<T, number>,
     value: T
 ): void {
-    values.set(value, (values.get(value) ?? 0) + 1);
+    values.set(
+        value,
+        (values.get(value) ?? 0) + 1
+    );
 }

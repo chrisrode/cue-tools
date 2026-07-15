@@ -1,4 +1,7 @@
 export const C_LABELS = [
     "CAPTIVE SOUL",
-    "COLDHARBOUR"
+    "CLIPPER'S SOUNDS",
+    "COLDHARBOUR",
+    "COLUMBIA (SONY)",
+    "CREATION"
 ];

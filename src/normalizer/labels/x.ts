@@ -1,1 +1,3 @@
-export const X_LABELS: string[] = [];
+export const X_LABELS: string[] = [
+    "XL"
+];

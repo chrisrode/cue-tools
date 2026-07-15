@@ -226,11 +226,13 @@ class Parser {
         const current = this.tokens[this.index]?.text ?? "<missing>";
         const next = this.tokens[this.index + 1]?.text ?? "<end>";
 
-        const description =
-            `Previous: ${previous}\n` +
-            `Unknown:  ${current}\n` +
-            `Next:     ${next}`;
+        incrementCount(this.report.ignoredLines, current);
 
-        incrementCount(this.report.ignoredLines, description);
+//        const description =
+//            `Previous: ${previous}\n` +
+//            `Unknown:  ${current}\n` +
+//            `Next:     ${next}`;
+//
+//        incrementCount(this.report.ignoredLines, description);
     }
 }

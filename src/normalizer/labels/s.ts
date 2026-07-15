@@ -1,6 +1,10 @@
 export const S_LABELS = [
+    "SELF RELEASED",
     "SHEFFIELD TUNES (KONTOR)",
+    "SKINT",
     "SOUKSONIC/STMPD",
     "SPINNIN'",
-    "STMPD"
+    "SPINNIN'/2DUTCH",
+    "STMPD",
+    "STUDIO GHIBLI"
 ];

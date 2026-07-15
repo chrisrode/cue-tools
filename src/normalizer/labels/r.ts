@@ -1,3 +1,11 @@
 export const R_LABELS = [
-    "REVEALED"
+    "RAVE ALERT",
+    "RCA [SONY]",
+    "RECKLESS",
+    "REFUNE",
+    "REPOPULATE MARS",
+    "REPUBLIC/GOOD MUSIC",
+    "REVEALED",
+    "REVEALED/WALL",
+    "ROC-A-FELLA (ISLAND DEF JAM)"
 ];

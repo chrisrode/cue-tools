@@ -1,4 +1,5 @@
 export const T_LABELS = [
     "THE END OF GENESYS/INTERSCOPE",
+    "TOMORROWLAND",
     "TRIPOLI TRAX"
 ];

@@ -1,3 +1,5 @@
 export const D_LABELS = [
-    "DIM MAK"
+    "DELTA HEAVY",
+    "DIM MAK",
+    "DRUMCODE/ARMADA"
 ];

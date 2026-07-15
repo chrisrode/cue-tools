@@ -1,3 +1,5 @@
 export const H_LABELS = [
-    "HMG"
+    "HARD RECS (INSOMNIAC)",
+    "HMG",
+    "HUSSLE"
 ];

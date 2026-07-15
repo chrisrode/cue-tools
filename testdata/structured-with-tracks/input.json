@@ -1,0 +1,647 @@
+{
+  "format": "cue-tools-tracklist",
+  "version": 1,
+  "source": {
+    "site": "1001tracklists",
+    "url": "https://www.1001tracklists.com/tracklist/2p7ftltk/afrojack-mainstage-ultra-europe-croatia-2024-07-14.html"
+  },
+  "metadata": {
+    "genres": [
+      "Dance / Electro Pop",
+      "Mainstage",
+      "Melodic House/Techno"
+    ],
+    "title": "AFROJACK @ Mainstage, Ultra Europe, Croatia 2024-07-14",
+    "headline": "AFROJACK @ Ultra Europe 2024-07-14",
+    "author": "AFROJACK",
+    "description": "Tracklist / playlist for live set AFROJACK @ Mainstage Ultra Europe 14th July 2024 with 120 Dance Electro Pop Mainstage Melodic House Techno tracks. Listen @ YouTube & Hearthis.at.",
+    "sourceUrl": "https://www.1001tracklists.com/tracklist/2p7ftltk/afrojack-mainstage-ultra-europe-croatia-2024-07-14.html",
+    "artworkUrl": "https://cdn.1001tracklists.com/images/artworks/sources/a/6/3/c/190716-artwork-umf-europe-5d2d6490e569c-Medium.jpg",
+    "published": "2024-07-14T22:39:46+00:00",
+    "modified": "2026-04-23T12:24:45+00:00",
+    "declaredTrackCount": 126
+  },
+  "tracks": [
+    {
+      "number": 1,
+      "performer": "NLW",
+      "title": "123(Co-Prod. by Magnificence) (AFROJACK 2022 Intro Edit)",
+      "withTracks": [
+        {
+          "performer": "AFROKI",
+          "title": "Diss You (Acappella)",
+          "label": "WALL/DIM MAK"
+        },
+        {
+          "performer": "NLW",
+          "title": "Free Your Mind",
+          "label": "WALL"
+        },
+        {
+          "performer": "John Summit & HAYLA",
+          "title": "Shiver (Acappella)",
+          "label": "EXPERTS ONLY"
+        }
+      ],
+      "timestamp": "02:04"
+    },
+    {
+      "number": 2,
+      "performer": "AFROJACK & R3HAB",
+      "title": "Shockwave",
+      "label": "MDLBEAST/CYB3RPVNK",
+      "withTracks": [
+        {
+          "performer": "Alesso",
+          "title": "Raise Your Head (Acappella)",
+          "label": "REFUNE"
+        },
+        {
+          "performer": "David Guetta & GLOWINTHEDARK ft. Harrison",
+          "title": "Ain't A Party (Let Me See Your Fuckin Hands Acappella)",
+          "label": "JACK BACK"
+        },
+        {
+          "performer": "Icona Pop ft. Charli xcx",
+          "title": "I Love It (Acappella)",
+          "label": "BIG BEAT (ATLANTIC)"
+        }
+      ],
+      "timestamp": "07:10"
+    },
+    {
+      "number": 3,
+      "performer": "Kid Cudi ft. MGMT & Ratatat",
+      "title": "Pursuit Of Happiness (Steve Aoki Remix)",
+      "label": "REPUBLIC/GOOD MUSIC",
+      "withTracks": [
+        {
+          "performer": "NLW",
+          "title": "Subway",
+          "label": "WALL"
+        },
+        {
+          "performer": "Peggy Gou",
+          "title": "(It Goes Like) Nanana (Acappella)",
+          "label": "XL"
+        }
+      ],
+      "timestamp": "08:53"
+    },
+    {
+      "number": 4,
+      "performer": "Eli Brown & Joyhauser",
+      "title": "Drop It Down",
+      "label": "ARCANE",
+      "withTracks": [
+        {
+          "performer": "ID",
+          "title": "ID"
+        },
+        {
+          "performer": "Artemas",
+          "title": "i like the way you kiss me (Acappella)",
+          "label": "10K PROJECTS"
+        }
+      ],
+      "timestamp": "13:42"
+    },
+    {
+      "number": 5,
+      "performer": "Cirez D",
+      "title": "On Off (Kapuchon Edit)",
+      "withTracks": [
+        {
+          "performer": "AFROJACK & Steve Aoki ft. Miss Palmer",
+          "title": "No Beef (Acappella)",
+          "label": "DIM MAK"
+        },
+        {
+          "performer": "DJ Kool",
+          "title": "Let Me Clear My Throat (Acappella)",
+          "label": "AMERICAN RECORDINGS"
+        }
+      ],
+      "timestamp": "15:36"
+    },
+    {
+      "number": 6,
+      "performer": "Tiësto & AFROJACK ft. MC Ambush",
+      "title": "Light It Up",
+      "label": "MUSICAL FREEDOM",
+      "withTracks": [
+        {
+          "performer": "Dido",
+          "title": "Thank You (Acappella)",
+          "label": "RCA (SONY)"
+        },
+        {
+          "performer": "Swedish House Mafia ft. John Martin",
+          "title": "Save The World (Acappella)",
+          "label": "EMI"
+        }
+      ],
+      "timestamp": "19:26"
+    },
+    {
+      "number": 7,
+      "performer": "David Guetta ft. Ne-Yo & Akon",
+      "title": "Play Hard",
+      "label": "WHAT A MUSIC",
+      "withTracks": [
+        {
+          "performer": "NLW & R3HAB ft. MC Ambush",
+          "title": "Let Me See Those Hands",
+          "label": "WALL/UMG"
+        }
+      ],
+      "timestamp": "22:33"
+    },
+    {
+      "number": 8,
+      "performer": "David Guetta & Kid Cudi vs. Benny Benassi",
+      "title": "Memories vs. Satisfaction (David Guetta & DJs From Mars Mashup)",
+      "label": "PARLOPHONE (WARNER MUSIC)/SPINNIN'",
+      "withTracks": [
+        {
+          "performer": "Syndicate Of L.A.W.",
+          "title": "Right On Time (2000 Countdown The Holly Digit Acappella)",
+          "label": "GUN RECORDS"
+        }
+      ],
+      "timestamp": "24:00"
+    },
+    {
+      "number": 9,
+      "performer": "David Guetta & AFROJACK",
+      "title": "Raving",
+      "label": "SPINNIN'",
+      "withTracks": [],
+      "timestamp": "27:33"
+    },
+    {
+      "number": 10,
+      "performer": "AFROJACK ft. Wrabel",
+      "title": "Ten Feet Tall",
+      "label": "ISLAND/WALL",
+      "withTracks": [
+        {
+          "performer": "TJR & VINAI",
+          "title": "Bounce Generation (Chasner & NLW Edit)"
+        },
+        {
+          "performer": "Alesso & OneRepublic",
+          "title": "If I Lose Myself (Acappella)",
+          "label": "INTERSCOPE"
+        },
+        {
+          "performer": "Sebastian Ingrosso & Tommy Trash ft. John Martin",
+          "title": "Reload",
+          "label": "REFUNE"
+        }
+      ],
+      "timestamp": "30:40"
+    },
+    {
+      "number": 11,
+      "performer": "Tavatli",
+      "title": "FE!N",
+      "label": "HMG",
+      "withTracks": [
+        {
+          "performer": "Tove Lo",
+          "title": "Habits (Stay High) (Acappella)",
+          "label": "UMG"
+        },
+        {
+          "performer": "AFROJACK",
+          "title": "ID"
+        },
+        {
+          "performer": "Gwen Stefani",
+          "title": "Hollaback Girl (Acappella)",
+          "label": "JANGO (WORMLAND)"
+        }
+      ],
+      "timestamp": "34:00"
+    },
+    {
+      "number": 12,
+      "performer": "Gotye ft. Kimbra",
+      "title": "Somebody That I Used To Know (SIDEPIECE Treat)",
+      "label": "INTERSCOPE",
+      "withTracks": [
+        {
+          "performer": "Mightyfools",
+          "title": "Footrocker (Get Your, Get Your Hands Up Acappella)",
+          "label": "REVEALED"
+        }
+      ],
+      "timestamp": "36:54"
+    },
+    {
+      "number": 13,
+      "performer": "Joy Orbison",
+      "title": "flight fm",
+      "label": "XL",
+      "withTracks": [
+        {
+          "performer": "Aliyah's Interlude",
+          "title": "IT GIRL (Acappella)",
+          "label": "INTERLUDE"
+        },
+        {
+          "performer": "Chris Brown ft. Lil Wayne & Busta Rhymes",
+          "title": "Look At Me Now (Acappella)",
+          "label": "JIVE"
+        }
+      ],
+      "timestamp": "38:34"
+    },
+    {
+      "number": 14,
+      "performer": "JAY-Z & Kanye West",
+      "title": "Niggas In Paris",
+      "label": "ROC-A-FELLA (ISLAND DEF JAM)",
+      "withTracks": [
+        {
+          "performer": "Julian Cross & Fision & Hardwell & AFROJACK vs. Skrillex & Fred again.. & Flowdan vs. Kendrick Lamar & MC Eiht",
+          "title": "KUTMUG vs. Rumble vs. m.A.A.d city (AFROJACK Mashup)",
+          "label": "AFTERMATH (INTERSCOPE)/ATLANTIC/OWSLA/REVEALED"
+        },
+        {
+          "performer": "Major Lazer ft. Vybz Kartel",
+          "title": "Pon De Floor(Co-Prod. by AFROJACK) (Acappella)",
+          "label": "MAD DECENT"
+        }
+      ],
+      "timestamp": "40:31"
+    },
+    {
+      "number": 15,
+      "performer": "Skrillex & Hamdi & Taichu & OFFAIAH",
+      "title": "Push (SAYMYNAME Remix)",
+      "label": "OWSLA",
+      "withTracks": [],
+      "timestamp": "42:47"
+    },
+    {
+      "number": 16,
+      "performer": "Hardwell & AFROJACK ft. MERYLL",
+      "title": "Push It",
+      "label": "REVEALED/WALL",
+      "withTracks": [
+        {
+          "performer": "Creeds",
+          "title": "Push Up",
+          "label": "RAVE ALERT"
+        },
+        {
+          "performer": "Zombie Nation",
+          "title": "Kernkraft 400",
+          "label": "EPM"
+        },
+        {
+          "performer": "Pitbull ft. Lil Jon & will.i.am & Jermaine Dupri",
+          "title": "Put Ya Fuckin Hands Up (Acappella)",
+          "label": "POLYDOR"
+        }
+      ],
+      "timestamp": "43:54"
+    },
+    {
+      "number": 17,
+      "performer": "Ray Volpe",
+      "title": "Laserbeam (Gammer Flip / Afrojack Edit)",
+      "withTracks": [
+        {
+          "performer": "AFROJACK & Lucas & Steve & DubVision ft. Taranteeno",
+          "title": "Anywhere With You (Acappella)",
+          "label": "WALL"
+        }
+      ],
+      "timestamp": "47:44"
+    },
+    {
+      "number": 18,
+      "performer": "Boys Noize",
+      "title": "FVKVRVND",
+      "label": "HARD RECS (INSOMNIAC)",
+      "withTracks": [
+        {
+          "performer": "Sak Noel",
+          "title": "Loca People (Acappella)",
+          "label": "CLIPPER'S SOUNDS"
+        },
+        {
+          "performer": "Sharam",
+          "title": "PATT (Party All The Time) (Adam Beyer & Layton Giordani & Green Velvet Remix)",
+          "label": "DRUMCODE/ARMADA"
+        }
+      ],
+      "timestamp": "48:41"
+    },
+    {
+      "number": 19,
+      "performer": "Olly James & Hardwell vs. Hardwell vs. Avicii vs. RAS",
+      "title": "Flatline vs. Spaceman vs. The Nights (Hardwell Mashup)",
+      "label": "REVEALED/PRMD",
+      "withTracks": [
+        {
+          "performer": "Central Cee ft. Lil Baby",
+          "title": "BAND4BAND",
+          "label": "COLUMBIA (SONY)"
+        }
+      ],
+      "timestamp": "51:21"
+    },
+    {
+      "number": 20,
+      "performer": "Metro Boomin & Future ft. Kendrick Lamar",
+      "title": "Like That",
+      "label": "BOOMINATI WORLDWIDE",
+      "withTracks": [
+        {
+          "performer": "Kodat",
+          "title": "Conqueror",
+          "label": "RECKLESS"
+        }
+      ],
+      "timestamp": "54:21"
+    },
+    {
+      "number": 21,
+      "performer": "Fatboy Slim",
+      "title": "Rockafeller Skank",
+      "label": "SKINT",
+      "withTracks": [
+        {
+          "performer": "Luciid",
+          "title": "Bunker Buster",
+          "label": "VERKNIPT"
+        }
+      ],
+      "timestamp": "55:32"
+    },
+    {
+      "number": 22,
+      "performer": "Basswell",
+      "title": "Party Everyday (ID Remix)",
+      "label": "SELF RELEASED",
+      "withTracks": [
+        {
+          "performer": "A$AP Ferg",
+          "title": "Plain Jane (Acappella)",
+          "label": "RCA (SONY)"
+        }
+      ],
+      "timestamp": "56:42"
+    },
+    {
+      "number": 23,
+      "performer": "The Kid LAROI & Justin Bieber",
+      "title": "STAY",
+      "label": "COLUMBIA (SONY)",
+      "withTracks": [
+        {
+          "performer": "Dirtyphonics & Circadian",
+          "title": "You Want Me",
+          "label": "MONSTERCAT"
+        },
+        {
+          "performer": "Showtek & Justin Prime",
+          "title": "Cannonball (Show Us What You Got When The Motherfucking Beat Drops Acappella)",
+          "label": "MUSICAL FREEDOM"
+        },
+        {
+          "performer": "Delta Heavy",
+          "title": "Ecstasy",
+          "label": "DELTA HEAVY"
+        },
+        {
+          "performer": "Marlon Hoffstadt aka DJ Daddy Trance",
+          "title": "It's That Time (Acappella)",
+          "label": "METHOD 808"
+        },
+        {
+          "performer": "Zomboy",
+          "title": "Like A Bitch (Acappella)",
+          "label": "NEVER SAY DIE"
+        }
+      ],
+      "timestamp": "57:57"
+    },
+    {
+      "number": 24,
+      "performer": "NLW & Primate",
+      "title": "Air Max",
+      "label": "WALL",
+      "withTracks": [
+        {
+          "performer": "David Guetta ft. Nicki Minaj, Bebe Rexha & AFROJACK",
+          "title": "Hey Mama (Acappella)",
+          "label": "WHAT A MUSIC"
+        },
+        {
+          "performer": "Kanye West ft. Rick Ross, Jay-Z, Bon Iver & Nicki Minaj",
+          "title": "Monster (Acappella)",
+          "label": "ROC-A-FELLA (ISLAND DEF JAM)"
+        }
+      ],
+      "timestamp": "1:00:34"
+    },
+    {
+      "number": 25,
+      "performer": "David Guetta & Showtek ft. VASSY",
+      "title": "BAD (Acappella)",
+      "label": "JACK BACK",
+      "withTracks": [
+        {
+          "performer": "Chase & Status & Bou ft. Trigga & IRAH & Flowdan & Takura",
+          "title": "Baddadan",
+          "label": "EMI"
+        }
+      ],
+      "timestamp": "1:01:29"
+    },
+    {
+      "number": 26,
+      "performer": "4B & Aazar",
+      "title": "Pop Dat (Acappella)",
+      "label": "SELF RELEASED",
+      "withTracks": [
+        {
+          "performer": "Noisia",
+          "title": "Voodoo (Noisia Outer Edges Remix)",
+          "label": "VISION"
+        }
+      ],
+      "timestamp": "1:02:32"
+    },
+    {
+      "number": 27,
+      "performer": "Shaboozey vs. Sub Focus",
+      "title": "Bar Song Rock It (Julian Cross & AFROJACK Edit)",
+      "withTracks": [],
+      "timestamp": "1:03:19"
+    },
+    {
+      "number": 28,
+      "performer": "Oasis",
+      "title": "Wonderwall",
+      "label": "CREATION",
+      "withTracks": [
+        {
+          "performer": "AFROJACK & Martin Garrix",
+          "title": "Turn Up The Speakers (Hardwell Rework)"
+        },
+        {
+          "performer": "Fred again.. & Swedish House Mafia ft. Future",
+          "title": "Turn On The Lights Again..",
+          "label": "ATLANTIC (WARNER MUSIC)"
+        },
+        {
+          "performer": "Benny Benassi ft. Gary Go",
+          "title": "Cinema (Acappella)",
+          "label": "ULTRA"
+        }
+      ],
+      "timestamp": "1:05:22"
+    },
+    {
+      "number": 29,
+      "performer": "AFROJACK ft. Eva Simons",
+      "title": "Take Over Control (Antoine Delvig 2023 Remix)",
+      "label": "SPINNIN'",
+      "withTracks": [
+        {
+          "performer": "Archer Marsh",
+          "title": "Give Me Everything (Stripped Down)",
+          "label": "BMG"
+        },
+        {
+          "performer": "Pitbull ft. Ne-Yo & AFROJACK & Nayer",
+          "title": "Give Me Everything (Acappella)",
+          "label": "MR. 305"
+        }
+      ],
+      "timestamp": "1:10:57"
+    },
+    {
+      "number": 30,
+      "performer": "Joe Hisaishi",
+      "title": "The Dragon Boy",
+      "label": "STUDIO GHIBLI",
+      "withTracks": [
+        {
+          "performer": "David Guetta ft. Sia",
+          "title": "Titanium(Co-Prod. by AFROJACK) (Acappella)",
+          "label": "FMIF"
+        },
+        {
+          "performer": "Hardwell & AFROJACK",
+          "title": "Speculations",
+          "label": "REVEALED"
+        },
+        {
+          "performer": "Chardy & Kronic",
+          "title": "S.W.A.T. Team (Everybody Fucking *Beep* Jump Acappella)",
+          "label": "HUSSLE"
+        },
+        {
+          "performer": "Avicii ft. Aloe Blacc",
+          "title": "Wake Me Up (Acappella)",
+          "label": "PRMD"
+        },
+        {
+          "performer": "Anyma & Chris Avantgarde",
+          "title": "Eternity",
+          "label": "AFTERLIFE/INTERSCOPE"
+        }
+      ],
+      "timestamp": "1:13:32"
+    },
+    {
+      "number": 31,
+      "performer": "Showtek ft. We Are Loud & Sonny Wilson",
+      "title": "Booyah",
+      "label": "SPINNIN'/2DUTCH",
+      "withTracks": [
+        {
+          "performer": "NLW",
+          "title": "To The Light",
+          "label": "WALL"
+        },
+        {
+          "performer": "Mau P",
+          "title": "Drugs From Amsterdam (Acappella)",
+          "label": "REPOPULATE MARS"
+        },
+        {
+          "performer": "Coldplay",
+          "title": "A Sky Full Of Stars(Prod. by Avicii) (Acappella)",
+          "label": "PARLOPHONE (WARNER MUSIC)"
+        }
+      ],
+      "timestamp": "1:17:21"
+    },
+    {
+      "number": 32,
+      "performer": "AFROJACK & Amél",
+      "title": "ID",
+      "withTracks": [
+        {
+          "performer": "Adele",
+          "title": "Set Fire To The Rain (Acappella)",
+          "label": "XL"
+        }
+      ],
+      "timestamp": "1:21:18"
+    },
+    {
+      "number": 33,
+      "performer": "Lana Del Rey",
+      "title": "Summertime Sadness (Amél Remix)",
+      "label": "INTERSCOPE",
+      "withTracks": [],
+      "timestamp": "1:23:01"
+    },
+    {
+      "number": 34,
+      "performer": "AFROJACK & R3HAB ft. Au/Ra",
+      "title": "Worlds On Fire (Tomorrowland 2022 Anthem) (AFROJACK & R3HAB vs. Vion Konger VIP Remix)",
+      "label": "TOMORROWLAND",
+      "withTracks": [],
+      "timestamp": "1:24:29"
+    },
+    {
+      "number": 35,
+      "performer": "AFROJACK ft. Spree Wilson",
+      "title": "The Spark (Acappella)",
+      "label": "ISLAND (UMG)",
+      "withTracks": [
+        {
+          "performer": "Jack Ü ft. Bunji Garlin & MX Prime",
+          "title": "Jungle Bae (Acappella)",
+          "label": "ATLANTIC (WARNER MUSIC)"
+        },
+        {
+          "performer": "UMEK & POPOF & Space 92 vs. Hardwell & AFROJACK",
+          "title": "Control vs. Hands Up (Hardwell Mashup)",
+          "label": "WALL/1605"
+        },
+        {
+          "performer": "Fais ft. AFROJACK",
+          "title": "Hey (Acappella)",
+          "label": "WALL"
+        },
+        {
+          "performer": "David Guetta & Sia vs. Hardwell & AFROJACK vs. Avicii & Dan Tyminski vs. JOYRYDE vs. Dimitri Vegas & Like Mike & Martin Garrix",
+          "title": "Titanium vs. Hands Up vs. Hey Brother vs. Hot Drum vs. Tremor (AFROJACK Mashup)",
+          "label": "PARLOPHONE (WARNER MUSIC)/PRMD/ISLAND/REVEALED/SPINNIN'/MAU5TRAP/OWSLA/WALL"
+        }
+      ],
+      "timestamp": "1:25:12"
+    }
+  ]
+}

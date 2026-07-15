@@ -1,79 +1,43 @@
-# cue-tools README
+# Cue Tools
 
-This is the README for your extension "cue-tools". After writing up a brief description, we recommend including the following sections.
+Cue Tools is a Visual Studio Code extension that streamlines creating CUE sheets from
+1001Tracklists by converting copied tracklists into properly formatted CUE TRACK entries.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Convert a copied 1001Tracklists page into CUE TRACK entries.
+- Automatically detects:
+  - Track numbers
+  - Timestamps
+  - Artists
+  - Titles
+  - Record labels
+  - IDs
+  - "w/" tracks
+- Extracts useful tracklist metadata:
+  - Title
+  - Artists
+  - Genre
+  - Event date
+  - Hosted shows
+  - Related tracklists
+- Generates an import report showing:
+  - Tracks imported
+  - Metadata extracted
+  - Ignored metadata
+  - Unknown lines
 
-For example if there is an image subfolder under your extension project workspace:
+## Usage
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Copy an entire tracklist page from 1001Tracklists.
+2. Open a `.cue` file in VS Code.
+3. Run **Cue Tools: Import Tracklist from Clipboard** from the Command Palette.
+4. Paste or insert the generated TRACK entries.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Development Status
 
-## Development
+This extension is currently in active development and has primarily been tested against 1001Tracklists pages.
 
-If you rename or move TypeScript source files,
-delete the `out` directory before compiling.
+## License
 
-TypeScript does not remove obsolete compiled files,
-which can lead to stale modules being executed.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+MIT

@@ -24,6 +24,7 @@ import { W_LABELS } from "./w";
 import { X_LABELS } from "./x";
 import { Y_LABELS } from "./y";
 import { Z_LABELS } from "./z";
+import { NUM_LABELS } from "./#";
 
 export const KNOWN_LABELS = [
     ...A_LABELS,
@@ -51,5 +52,6 @@ export const KNOWN_LABELS = [
     ...W_LABELS,
     ...X_LABELS,
     ...Y_LABELS,
-    ...Z_LABELS
+    ...Z_LABELS,
+    ...NUM_LABELS
 ];

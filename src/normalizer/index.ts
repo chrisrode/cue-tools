@@ -58,13 +58,13 @@ export function normalizeTracks(
         if (title.toUpperCase() === "ID") {
             idNumber++;
 
-            title = sourceTitle
-                ? `ID${idNumber} (from ${sourceTitle})`
-                : `ID${idNumber}`;
-        }
+            const normalizedSourceTitle = sourceTitle
+                ? normalizeSourceTitle(sourceTitle)
+                : undefined;
 
-        if (normalizedPerformer.toUpperCase() === "ID") {
-            normalizedPerformer = "Unknown";
+            title = normalizedSourceTitle
+                ? `ID${idNumber} (from ${normalizedSourceTitle})`
+                : `ID${idNumber}`;
         }
 
         return {
@@ -90,5 +90,11 @@ function stripKnownLabel(title: string): string {
 
     return title
         .replace(/\s{2,}[A-Z0-9&'().:/ -]+$/u, "")
+        .trim();
+}
+
+function normalizeSourceTitle(title: string): string {
+    return title
+        .replace(/\s+\(DJ Mix\)$/iu, "")
         .trim();
 }

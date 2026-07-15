@@ -20,8 +20,17 @@ export function writeImportReport(
     const channel = getChannel();
 
     channel.clear();
-    channel.appendLine("Cue Tools Import Report");
     channel.appendLine("=======================");
+    channel.appendLine("Cue Tools Import Report");
+    channel.appendLine(new Date().toLocaleString('sv-SE').replace(',', ''));
+    channel.appendLine("=======================");
+    channel.appendLine(
+        `Import source: ${
+            report.source === "structured-json"
+                ? "Cue Tools browser JSON"
+                : "Copied 1001Tracklists text"
+        }`
+    );
     channel.appendLine("");
     channel.appendLine(`Tracks imported:      ${report.importedTracks}`);
     channel.appendLine(`With-tracks imported: ${report.importedWithTracks}`);
@@ -119,7 +128,7 @@ export function writeImportReport(
 
     if (report.ignoredLines.size > 0) {
         channel.appendLine("");
-        channel.appendLine("Ignored unknown lines");
+        channel.appendLine("Unrecognized metadata");
         channel.appendLine("---------------------");
 
         const entries = [...report.ignoredLines.entries()]

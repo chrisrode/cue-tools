@@ -20,7 +20,13 @@ suite("CUE pipeline golden files", () => {
                 caseName
             );
 
-            const inputPath = path.join(caseDirectory, "input.txt");
+            const textInputPath = path.join(caseDirectory, "input.txt");
+            const jsonInputPath = path.join(caseDirectory, "input.json");
+
+            const inputPath = fs.existsSync(jsonInputPath)
+                ? jsonInputPath
+                : textInputPath;
+
             const expectedPath = path.join(
                 caseDirectory,
                 "expected.cue"

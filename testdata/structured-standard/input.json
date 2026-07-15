@@ -1,0 +1,193 @@
+{
+  "format": "cue-tools-tracklist",
+  "version": 1,
+  "source": {
+    "site": "1001tracklists",
+    "url": "https://www.1001tracklists.com/tracklist/25jqs6yt/giuseppe-ottaviani-uno-main-rong-open-air-festival-malta-2026-05-10.html"
+  },
+  "metadata": {
+    "genres": [
+      "Trance"
+    ],
+    "title": "Giuseppe Ottaviani @ UNO Main, Rong Open Air Festival, Malta 2026-05-10",
+    "headline": "Giuseppe Ottaviani @ Rong Open Air Festival 2026-05-10",
+    "author": "Giuseppe Ottaviani",
+    "description": "Tracklist / playlist for live set Giuseppe Ottaviani @ UNO Main Rong Open Air Festival 10th May 2026 with 22 Trance tracks. Listen @ SoundCloud.",
+    "sourceUrl": "https://www.1001tracklists.com/tracklist/25jqs6yt/giuseppe-ottaviani-uno-main-rong-open-air-festival-malta-2026-05-10.html",
+    "artworkUrl": "https://i1.sndcdn.com/artworks-MJYSxfsFrEkZZuLj-lF7pdQ-t500x500.jpg",
+    "published": "2026-05-15T21:22:21+00:00",
+    "modified": "2026-06-30T16:37:44+00:00",
+    "declaredTrackCount": 22
+  },
+  "tracks": [
+    {
+      "number": 1,
+      "performer": "Mauro Picotto",
+      "title": "Proximus (Medley with Adiemus)",
+      "withTracks": []
+    },
+    {
+      "number": 2,
+      "performer": "Mauro Picotto & Giuseppe Ottaviani",
+      "title": "Ibiza Dream",
+      "label": "ARMADA",
+      "withTracks": [],
+      "timestamp": "01:18"
+    },
+    {
+      "number": 3,
+      "performer": "Blaze ft. Palmer Brown",
+      "title": "My Beat (ID Remix)",
+      "label": "ITH",
+      "withTracks": [],
+      "timestamp": "04:44"
+    },
+    {
+      "number": 4,
+      "performer": "Giuseppe Ottaviani & Andrew Rayel ft. Alessia Labate",
+      "title": "How Do We Know",
+      "label": "ARMADA",
+      "withTracks": [],
+      "timestamp": "08:37"
+    },
+    {
+      "number": 5,
+      "performer": "Eric Prydz",
+      "title": "Every Day (Sneijder pres. Alt1 Remix)",
+      "label": "PRYDA",
+      "withTracks": [],
+      "timestamp": "11:11"
+    },
+    {
+      "number": 6,
+      "performer": "OTTAGON",
+      "title": "Linking People",
+      "label": "ARMADA",
+      "withTracks": [],
+      "timestamp": "14:43"
+    },
+    {
+      "number": 7,
+      "performer": "Anyma & Joji",
+      "title": "Beautiful (OTTAGON Remix)",
+      "label": "THE END OF GENESYS/INTERSCOPE",
+      "withTracks": [],
+      "timestamp": "18:16"
+    },
+    {
+      "number": 8,
+      "performer": "Ben Hemsley & Giuseppe Ottaviani",
+      "title": "Law Of Attraction",
+      "withTracks": [],
+      "timestamp": "22:08"
+    },
+    {
+      "number": 9,
+      "performer": "Giuseppe Ottaviani & Dicosis",
+      "title": "Run Away",
+      "label": "ASOT (ARMADA)",
+      "withTracks": [],
+      "timestamp": "26:14"
+    },
+    {
+      "number": 10,
+      "performer": "John Rees vs. Helios",
+      "title": "Beta Blocker (JR (UK) Trance Mix)",
+      "label": "MUSICHUB",
+      "withTracks": [],
+      "timestamp": "29:49"
+    },
+    {
+      "number": 11,
+      "performer": "Paul van Dyk ft. Sue McLaren",
+      "title": "Lights (Giuseppe Ottaviani Remix)",
+      "label": "ULTRA",
+      "withTracks": [],
+      "timestamp": "32:40"
+    },
+    {
+      "number": 12,
+      "performer": "Giuseppe Ottaviani & April Bender",
+      "title": "Something I Can Dream About (OnAir Mix)",
+      "label": "BLACK HOLE",
+      "withTracks": [],
+      "timestamp": "36:02"
+    },
+    {
+      "number": 13,
+      "performer": "Paul Denton",
+      "title": "Deep In Your Mind",
+      "label": "AFTERDARK (BLACK HOLE)",
+      "withTracks": [],
+      "timestamp": "38:43"
+    },
+    {
+      "number": 14,
+      "performer": "Olive",
+      "title": "You're Not Alone (ID Remix)",
+      "label": "RCA (SONY)",
+      "withTracks": [],
+      "timestamp": "42:35"
+    },
+    {
+      "number": 15,
+      "performer": "Ratty",
+      "title": "Sunrise (Here I Am) (Club Mix)",
+      "label": "SHEFFIELD TUNES (KONTOR)",
+      "withTracks": [],
+      "timestamp": "44:56"
+    },
+    {
+      "number": 16,
+      "performer": "Giuseppe Ottaviani & Billy Gillies",
+      "title": "Doves",
+      "label": "ARMADA",
+      "withTracks": [],
+      "timestamp": "48:38"
+    },
+    {
+      "number": 17,
+      "performer": "Giuseppe Ottaviani & Ilan Bluestone",
+      "title": "Together Again",
+      "withTracks": [],
+      "timestamp": "52:19"
+    },
+    {
+      "number": 18,
+      "performer": "Giuseppe Ottaviani",
+      "title": "8K",
+      "label": "BLACK HOLE",
+      "withTracks": [
+        {
+          "performer": "Opus III",
+          "title": "It's A Fine Day (Acappella)",
+          "label": "PWL"
+        }
+      ],
+      "timestamp": "56:41"
+    },
+    {
+      "number": 19,
+      "performer": "Giuseppe Ottaviani",
+      "title": "Hold On",
+      "withTracks": [],
+      "timestamp": "1:00:03"
+    },
+    {
+      "number": 20,
+      "performer": "Space Frog ft. The Grim Reaper",
+      "title": "X-Ray (Follow Me) (Derb Remix)",
+      "label": "TRIPOLI TRAX",
+      "withTracks": [],
+      "timestamp": "1:04:27"
+    },
+    {
+      "number": 21,
+      "performer": "Jones & Stephenson",
+      "title": "The First Rebirth (ID Remix)",
+      "label": "BONZAI",
+      "withTracks": [],
+      "timestamp": "1:08:39"
+    }
+  ]
+}

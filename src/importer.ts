@@ -1,7 +1,12 @@
 import { formatCueTracks } from "./formatter";
-import { ImportReport } from "./importReport";
+import {
+    createImportReport,
+    ImportReport
+} from "./importReport";
+import { Track } from "./models";
 import { normalizeTracks } from "./normalizer";
 import { parseTracklist } from "./parser";
+import { tryParseStructuredTracklist } from "./structuredTracklist";
 import { TracklistMetadata } from "./tracklistMetadata";
 
 export interface ImportOptions {
@@ -14,36 +19,76 @@ export interface ImportResult {
     metadata: TracklistMetadata;
 }
 
+interface ImportSource {
+    tracks: Track[];
+    metadata: TracklistMetadata;
+    report: ImportReport;
+}
+
 export function importCue(
     text: string,
     options: ImportOptions = {}
 ): ImportResult {
-    const parseResult = parseTracklist(text);
+    const source = createImportSource(text);
+
+    const sourceTitle =
+        options.sourceTitle ??
+        source.metadata.title;
 
     const normalizedTracks = normalizeTracks(
-        parseResult.tracks,
-        options.sourceTitle
+        source.tracks,
+        sourceTitle
     );
 
-    parseResult.report.identifiedTracks = countIds(normalizedTracks);
+    source.report.identifiedTracks = countIds(normalizedTracks);
 
     return {
         cueText: formatCueTracks(normalizedTracks),
-        report: parseResult.report,
-        metadata: parseResult.metadata
-};
+        report: source.report,
+        metadata: source.metadata
+    };
 }
 
-function countIds(
-    tracks: ReturnType<typeof normalizeTracks>
-): number {
-    return tracks.reduce((total, track) => {
-        const mainId = /^ID\d+(?:\s|$)/u.test(track.title) ? 1 : 0;
+function createImportSource(text: string): ImportSource {
+    const structured = tryParseStructuredTracklist(text);
 
-        const withIds = track.withTracks.filter(withTrack =>
-            /^ID\d+(?:\s|$)/u.test(withTrack.title)
+    if (structured) {
+        const report = createImportReport("structured-json");
+
+        report.importedTracks = structured.tracks.length;
+        report.importedWithTracks = structured.tracks.reduce(
+            (sum: number, track: Track) =>
+                sum + track.withTracks.length,
+            0
+        );
+
+        return {
+            tracks: structured.tracks,
+            metadata: structured.metadata,
+            report
+        };
+    }
+
+    const parsed = parseTracklist(text);
+
+    return {
+        tracks: parsed.tracks,
+        metadata: parsed.metadata,
+        report: parsed.report
+    };
+}
+
+function countIds(tracks: Track[]): number {
+    return tracks.reduce((total, track) => {
+        const mainId = /^ID\d+(?:\s|$)/u.test(track.title)
+            ? 1
+            : 0;
+
+        const withTrackIds = track.withTracks.filter(
+            withTrack =>
+                /^ID\d+(?:\s|$)/u.test(withTrack.title)
         ).length;
 
-        return total + mainId + withIds;
+        return total + mainId + withTrackIds;
     }, 0);
 }
