@@ -53,17 +53,34 @@ export function normalizeTracks(
         rawTitle: string
     ): { performer: string; title: string } {
         let title = normalizeTitle(rawTitle);
-        let normalizedPerformer = performer;
+        const normalizedPerformer = performer;
 
-        if (title.toUpperCase() === "ID") {
+        const idMatch = title.match(
+            /^ID(?:\s*\((.+)\))?$/iu
+        );
+
+        if (idMatch) {
             idNumber++;
+
+            const detail =
+                idMatch[1]?.trim() || undefined;
 
             const normalizedSourceTitle = sourceTitle
                 ? normalizeSourceTitle(sourceTitle)
                 : undefined;
 
-            title = normalizedSourceTitle
-                ? `ID${idNumber} (from ${normalizedSourceTitle})`
+            const details = [
+                detail,
+                normalizedSourceTitle
+                    ? `from ${normalizedSourceTitle}`
+                    : undefined
+            ].filter(
+                (value): value is string =>
+                    value !== undefined
+            );
+
+            title = details.length > 0
+                ? `ID${idNumber} (${details.join("; ")})`
                 : `ID${idNumber}`;
         }
 
