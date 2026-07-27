@@ -26,11 +26,16 @@ async function importIntoActiveEditor(sourceText: string): Promise<void> {
     }
 
     const sourceTitle = extractDocumentTitle(editor.document.getText());
+    const configuration = vscode.workspace.getConfiguration("cue-tools");
+    const appendLosslessCutEndMarker = configuration.get<boolean>(
+        "appendLosslessCutEndMarker",
+        false
+    );
 
     const result = importCue(sourceText, {
-        sourceTitle
+        sourceTitle,
+        appendLosslessCutEndMarker
     });
-
     const cueText = result.cueText;
 
     if (!cueText.trim()) {
@@ -53,18 +58,21 @@ async function importIntoActiveEditor(sourceText: string): Promise<void> {
 
     writeImportReport(result.report, result.metadata);
 
+    if (
+        appendLosslessCutEndMarker &&
+        !result.endMarkerAppended
+    ) {
+        vscode.window.showWarningMessage(
+            "Cue Tools imported the tracks but could not append the " +
+            "LosslessCut end marker because the clipboard JSON did not " +
+            "contain a detected media duration."
+        );
+    }
+
     vscode.window.showInformationMessage(
         `Cue Tools imported ${result.report.importedTracks} ` +
         `track${result.report.importedTracks === 1 ? "" : "s"}.`
     );
-}
-
-function getErrorMessage(error: unknown): string {
-    if (error instanceof Error) {
-        return error.message;
-    }
-
-    return String(error);
 }
 
 function extractDocumentTitle(documentText: string): string | undefined {
