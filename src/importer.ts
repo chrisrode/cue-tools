@@ -11,18 +11,21 @@ import { TracklistMetadata } from "./tracklistMetadata";
 
 export interface ImportOptions {
     sourceTitle?: string;
+    appendLosslessCutEndMarker?: boolean;
 }
 
 export interface ImportResult {
     cueText: string;
     report: ImportReport;
     metadata: TracklistMetadata;
+    endMarkerAppended: boolean;
 }
 
 interface ImportSource {
     tracks: Track[];
     metadata: TracklistMetadata;
     report: ImportReport;
+    mediaDurationSeconds?: number;
 }
 
 export function importCue(
@@ -42,10 +45,19 @@ export function importCue(
 
     source.report.identifiedTracks = countIds(normalizedTracks);
 
+    const formatted = formatCueTracks(normalizedTracks, {
+        appendEndMarker:
+            options.appendLosslessCutEndMarker === true,
+        ...(source.mediaDurationSeconds !== undefined
+            ? { mediaDurationSeconds: source.mediaDurationSeconds }
+            : {})
+    });
+
     return {
-        cueText: formatCueTracks(normalizedTracks),
+        cueText: formatted.cueText,
         report: source.report,
-        metadata: source.metadata
+        metadata: source.metadata,
+        endMarkerAppended: formatted.endMarkerAppended
     };
 }
 
@@ -65,7 +77,13 @@ function createImportSource(text: string): ImportSource {
         return {
             tracks: structured.tracks,
             metadata: structured.metadata,
-            report
+            report,
+            ...(structured.mediaDurationSeconds !== undefined
+                ? {
+                    mediaDurationSeconds:
+                        structured.mediaDurationSeconds
+                }
+                : {})
         };
     }
 
