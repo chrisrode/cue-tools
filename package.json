@@ -18,7 +18,17 @@
         "command": "cue-tools.importTracklist",
         "title": "Cue Tools: Import Tracklist from 1001Tracklists.com"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Cue Tools",
+      "properties": {
+        "cue-tools.appendLosslessCutEndMarker": {
+          "type": "boolean",
+          "default": false,
+          "description": "Append a titleless terminal CUE track at the detected media duration so LosslessCut treats the final real track as a segment. Requires structured JSON containing mediaDurationSeconds."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
