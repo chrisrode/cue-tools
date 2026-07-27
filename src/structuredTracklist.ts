@@ -9,6 +9,7 @@ export interface StructuredTracklistPayload {
     version: 1;
     source: StructuredSource;
     metadata: StructuredMetadata;
+    mediaDurationSeconds?: number;
     tracks: StructuredTrack[];
 }
 
@@ -48,6 +49,7 @@ export interface StructuredWithTrack {
 export interface StructuredImportSource {
     tracks: Track[];
     metadata: TracklistMetadata;
+    mediaDurationSeconds?: number;
 }
 
 export function tryParseStructuredTracklist(
@@ -73,7 +75,10 @@ export function tryParseStructuredTracklist(
 
     return {
         tracks: value.tracks.map(mapTrack),
-        metadata: mapMetadata(value)
+        metadata: mapMetadata(value),
+        ...(value.mediaDurationSeconds !== undefined
+            ? { mediaDurationSeconds: value.mediaDurationSeconds }
+            : {})
     };
 }
 
@@ -89,6 +94,14 @@ function isStructuredTracklistPayload(
         value.version === 1 &&
         isStructuredSource(value.source) &&
         isStructuredMetadata(value.metadata) &&
+        (
+            value.mediaDurationSeconds === undefined ||
+            (
+                typeof value.mediaDurationSeconds === "number" &&
+                Number.isFinite(value.mediaDurationSeconds) &&
+                value.mediaDurationSeconds > 0
+            )
+        ) &&
         Array.isArray(value.tracks) &&
         value.tracks.every(isStructuredTrack)
     );
