@@ -2,6 +2,11 @@
 
 # Changelog
 
+## 0.5.1
+
+### Changed
+- Update dependencies
+
 ## 0.5.0
 
 ### Added
