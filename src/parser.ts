@@ -100,7 +100,7 @@ class Parser {
         }
 
         const number = parseInt(numberToken.text, 10);
-        let timestamp = "00:00:00";
+        let timestamp: string | undefined;
 
         this.advance();
 
