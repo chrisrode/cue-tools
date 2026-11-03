@@ -6,6 +6,9 @@ Cue Tools is a Visual Studio Code extension that streamlines creating CUE sheets
 ## Features
 
 - Convert a copied 1001Tracklists page into CUE TRACK entries.
+- Group untimestamped tracks with the preceding timestamped track (or an initial
+  track at `00:00:00`), joining titles and performers with ` / `. Each parent's
+  "w/" tracks follow it immediately, and CUE tracks are numbered sequentially.
 - Automatically detects:
   - Track numbers
   - Timestamps

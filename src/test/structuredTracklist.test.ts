@@ -43,7 +43,7 @@ suite("Structured tracklist", () => {
 
         assert.ok(result);
         assert.strictEqual(result.tracks.length, 2);
-        assert.strictEqual(result.tracks[0].timestamp, "00:00:00");
+        assert.strictEqual(result.tracks[0].timestamp, undefined);
         assert.strictEqual(result.tracks[1].timestamp, "64:27:00");
         assert.strictEqual(result.tracks[1].withTracks.length, 1);
         assert.strictEqual(result.metadata.title, "Example DJ @ Example Festival");

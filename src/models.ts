@@ -5,7 +5,7 @@ export interface WithTrack {
 
 export interface Track {
     number: number;
-    timestamp: string;
+    timestamp?: string;
     performer: string;
     title: string;
     withTracks: WithTrack[];

@@ -1,0 +1,162 @@
+{
+  "format": "cue-tools-tracklist",
+  "version": 1,
+  "source": {
+    "site": "1001tracklists",
+    "url": "https://www.1001tracklists.com/tracklist/1kc1r5k/steve-aoki-mainstage-tomorrowland-weekend-2-belgium-2014-07-27.html"
+  },
+  "metadata": {
+    "genres": [
+      "Mainstage"
+    ],
+    "title": "Steve Aoki @ Mainstage, Tomorrowland Weekend 2, Belgium 2014-07-27",
+    "headline": "Steve Aoki @ Tomorrowland Weekend 2 2014-07-27",
+    "author": "Steve Aoki",
+    "description": "Tracklist / playlist for live set Steve Aoki @ Mainstage Tomorrowland Weekend 2 27th July 2014 with 25 Mainstage tracks. Listen @ SoundCloud, Mixcloud & YouTube.",
+    "sourceUrl": "https://www.1001tracklists.com/tracklist/1kc1r5k/steve-aoki-mainstage-tomorrowland-weekend-2-belgium-2014-07-27.html",
+    "artworkUrl": "https://i1.sndcdn.com/avatars-IbPGxPJvuNyswGlD-X2yrFQ-t500x500.jpg",
+    "published": "2014-07-27T21:33:15+00:00",
+    "modified": "2015-05-02T23:16:40+00:00",
+    "declaredTrackCount": 25
+  },
+  "mediaDurationSeconds": 3440,
+  "tracks": [
+    {
+      "number": 1,
+      "performer": "Steve Aoki ft. Luke Steele",
+      "title": "Neon Future",
+      "withTracks": []
+    },
+    {
+      "number": 2,
+      "performer": "Steve Aoki vs. Garmiani vs. Kanye West",
+      "title": "Bring You To Power (Garmiani Edit)",
+      "label": "ROC-A-FELLA/CIRCUS RECORDS/DIM MAK",
+      "withTracks": [],
+      "timestamp": "05:30"
+    },
+    {
+      "number": 3,
+      "performer": "Borgore",
+      "title": "Last Year (Steve Aoki Mainstage Remix)",
+      "label": "BUYGORE",
+      "withTracks": []
+    },
+    {
+      "number": 4,
+      "performer": "Linkin Park & Steve Aoki",
+      "title": "A Light That Never Comes (Vicetone Dub Mix)",
+      "label": "DIM MAK",
+      "withTracks": [
+        {
+          "performer": "Linkin Park & Steve Aoki",
+          "title": "A Light That Never Comes (TWOLOUD Remix)",
+          "label": "WARNER/DIM MAK"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "performer": "AFROJACK & Steve Aoki ft. Bonnie McKee",
+      "title": "Afroki",
+      "label": "ULTRA",
+      "withTracks": []
+    },
+    {
+      "number": 6,
+      "performer": "Steve Aoki & Chris Lake & TUJAMO",
+      "title": "Boneless",
+      "label": "DIM MAK/ULTRA",
+      "withTracks": []
+    },
+    {
+      "number": 7,
+      "performer": "Steve Aoki & Fall Out Boy vs. Ummet Ozcan vs. Showtek",
+      "title": "Back To Earth vs. Raise Your Hands vs. Slow Down (Steve Aoki Mashup)",
+      "label": "DIM MAK/SPINNIN'/ULTRA",
+      "withTracks": []
+    },
+    {
+      "number": 8,
+      "performer": "AutoErotique & Felix Cartal",
+      "title": "HEAT",
+      "label": "DIM MAK",
+      "withTracks": []
+    },
+    {
+      "number": 9,
+      "performer": "Steve Aoki ft. Waka Flocka Flame",
+      "title": "Rage The Night Away",
+      "label": "ULTRA",
+      "withTracks": [
+        {
+          "performer": "Estelle ft. Kardinal Offishall",
+          "title": "Freak(Prod. by David Guetta) (Acappella)",
+          "label": "ATLANTIC (WARNER MUSIC)"
+        },
+        {
+          "performer": "Steve Aoki ft. Waka Flocka Flame",
+          "title": "Rage The Night Away (Milo & Otis Remix)",
+          "label": "ULTRA"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "performer": "Steve Aoki & Diplo & Deorro ft. Steve Bays",
+      "title": "Freak",
+      "label": "MAD DECENT",
+      "withTracks": []
+    },
+    {
+      "number": 11,
+      "performer": "The Chainsmokers",
+      "title": "#SELFIE (Botnek Remix)",
+      "label": "DIM MAK",
+      "withTracks": []
+    },
+    {
+      "number": 12,
+      "performer": "Steve Aoki ft. Machine Gun Kelly",
+      "title": "Free The Madness",
+      "label": "ULTRA",
+      "withTracks": []
+    },
+    {
+      "number": 13,
+      "performer": "Steve Aoki & Tony Junior & NERVO",
+      "title": "Lightning Strikes",
+      "label": "ULTRA",
+      "withTracks": [],
+      "timestamp": "38:00"
+    },
+    {
+      "number": 14,
+      "performer": "AFROJACK & Steve Aoki ft. Miss Palmer",
+      "title": "No Beef",
+      "label": "WALL/ULTRA",
+      "withTracks": []
+    },
+    {
+      "number": 15,
+      "performer": "Steve Aoki & R3HAB",
+      "title": "Flight",
+      "label": "ULTRA/DIM MAK",
+      "withTracks": []
+    },
+    {
+      "number": 16,
+      "performer": "Steve Aoki & Moxie",
+      "title": "I Love It When You Cry (Moxoki)",
+      "label": "ULTRA",
+      "withTracks": []
+    },
+    {
+      "number": 17,
+      "performer": "Kid Cudi ft. MGMT & Ratatat",
+      "title": "Pursuit Of Happiness (Steve Aoki Remix)",
+      "label": "REPUBLIC/GOOD MUSIC",
+      "withTracks": []
+    }
+  ]
+}

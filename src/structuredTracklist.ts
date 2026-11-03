@@ -213,9 +213,9 @@ function mapMetadata(
     return metadata;
 }
 
-function normalizeTimestamp(timestamp: string | undefined): string {
-    if (!timestamp) {
-        return "00:00:00";
+function normalizeTimestamp(timestamp: string | undefined): string | undefined {
+    if (!timestamp?.trim()) {
+        return undefined;
     }
 
     const parts = timestamp.split(":").map(Number);

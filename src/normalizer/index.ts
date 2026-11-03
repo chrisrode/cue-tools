@@ -17,7 +17,9 @@ export function normalizeTracks(
 ): Track[] {
     let idNumber = 0;
 
-    return tracks.map(track => {
+    const groups: Track[] = [];
+
+    for (const track of tracks) {
         const normalizedMain = normalizeIdentity(
             track.performer,
             track.title
@@ -27,13 +29,25 @@ export function normalizeTracks(
             normalizeWithTrack(withTrack)
         );
 
-        return {
-            ...track,
-            performer: normalizedMain.performer,
-            title: normalizedMain.title,
-            withTracks: normalizedWithTracks
-        };
-    });
+        const previous = groups[groups.length - 1];
+
+        // Normalize each identity before grouping, preserving ID order and
+        // keeping each parent's with-tracks immediately after that parent.
+        if (!track.timestamp && previous) {
+            previous.withTracks.push(normalizedMain, ...normalizedWithTracks);
+        } else {
+            groups.push({
+                ...track,
+                number: groups.length + 1,
+                timestamp: track.timestamp || "00:00:00",
+                performer: normalizedMain.performer,
+                title: normalizedMain.title,
+                withTracks: normalizedWithTracks
+            });
+        }
+    }
+
+    return groups;
 
     function normalizeWithTrack(withTrack: WithTrack): WithTrack {
         const normalized = normalizeIdentity(
