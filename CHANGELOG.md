@@ -2,6 +2,14 @@
 
 # Changelog
 
+## 0.5.2
+
+### Added
+- When tracks have no timecodes, Cue Tools prompts you to group them with the
+  preceding track or keep them as separate CUE tracks at `00:00:00` for manual
+  timing. Existing timecodes are preserved, and each track's "w/" entries stay
+  with their parent. Dismissing the prompt cancels the import.
+  
 ## 0.5.1
 
 ### Changed

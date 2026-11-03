@@ -12,6 +12,7 @@ import { TracklistMetadata } from "./tracklistMetadata";
 export interface ImportOptions {
     sourceTitle?: string;
     appendLosslessCutEndMarker?: boolean;
+    groupUntimestampedTracks?: boolean;
 }
 
 export interface ImportResult {
@@ -34,13 +35,39 @@ export function importCue(
 ): ImportResult {
     const source = createImportSource(text);
 
+    return importSource(source, options);
+}
+
+// A dismissed choice cancels the import before the editor is changed.
+export async function importCueWithTimestampChoice(
+    text: string,
+    options: ImportOptions,
+    chooseGrouping: (missingCount: number) => Promise<boolean | undefined>
+): Promise<ImportResult | undefined> {
+    const source = createImportSource(text);
+    const missingCount = source.tracks.filter(track => !track.timestamp).length;
+    let groupUntimestampedTracks = options.groupUntimestampedTracks;
+
+    if (missingCount > 0) {
+        groupUntimestampedTracks = await chooseGrouping(missingCount);
+        if (groupUntimestampedTracks === undefined) {
+            return undefined;
+        }
+    }
+
+    return importSource(source, { ...options, groupUntimestampedTracks });
+}
+
+function importSource(source: ImportSource, options: ImportOptions): ImportResult {
+
     const sourceTitle =
         options.sourceTitle ??
         source.metadata.title;
 
     const normalizedTracks = normalizeTracks(
         source.tracks,
-        sourceTitle
+        sourceTitle,
+        options.groupUntimestampedTracks ?? true
     );
 
     source.report.identifiedTracks = countIds(normalizedTracks);

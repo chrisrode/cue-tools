@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { importCue } from "./importer";
+import { importCueWithTimestampChoice } from "./importer";
 import { writeImportReport } from "./logger";
 
 export function activate(context: vscode.ExtensionContext): void {
@@ -32,10 +32,24 @@ async function importIntoActiveEditor(sourceText: string): Promise<void> {
         false
     );
 
-    const result = importCue(sourceText, {
+    const result = await importCueWithTimestampChoice(sourceText, {
         sourceTitle,
         appendLosslessCutEndMarker
+    }, async missingCount => {
+        const group = "Group tracks";
+        const separate = "Keep separate at 00:00:00";
+        const choice = await vscode.window.showQuickPick([group, separate], {
+            title: "Tracks without timecodes",
+            placeHolder: `${missingCount} track${missingCount === 1 ? " has" : "s have"} no timecode. How should they be imported?`,
+            ignoreFocusOut: true
+        });
+
+        return choice === undefined ? undefined : choice === group;
     });
+
+    if (!result) {
+        return;
+    }
     const cueText = result.cueText;
 
     if (!cueText.trim()) {
