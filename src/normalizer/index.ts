@@ -13,7 +13,8 @@ const TITLE_NORMALIZERS = [
 
 export function normalizeTracks(
     tracks: Track[],
-    sourceTitle?: string
+    sourceTitle?: string,
+    groupUntimestampedTracks = true
 ): Track[] {
     let idNumber = 0;
 
@@ -33,7 +34,7 @@ export function normalizeTracks(
 
         // Normalize each identity before grouping, preserving ID order and
         // keeping each parent's with-tracks immediately after that parent.
-        if (!track.timestamp && previous) {
+        if (groupUntimestampedTracks && !track.timestamp && previous) {
             previous.withTracks.push(normalizedMain, ...normalizedWithTracks);
         } else {
             groups.push({

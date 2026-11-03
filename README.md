@@ -32,6 +32,11 @@ Cue Tools is a Visual Studio Code extension that streamlines creating CUE sheets
 
 ## Usage
 
+When tracks have no timecodes, Cue Tools prompts you to group them with the
+preceding track or keep them as separate CUE tracks at `00:00:00` for manual
+timing. Existing timecodes are preserved, and each track's "w/" entries stay
+with their parent. Dismissing the prompt cancels the import.
+
 1. Copy an entire tracklist page from 1001Tracklists.
 2. Open a `.cue` file in VS Code.
 3. Run **Cue Tools: Import Tracklist from Clipboard** from the Command Palette.
