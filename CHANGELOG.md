@@ -2,6 +2,11 @@
 
 # Changelog
 
+## 0.5.3
+
+### Bug Fix
+- Do not take the first track into account on the no timecode prompt.
+
 ## 0.5.2
 
 ### Added
