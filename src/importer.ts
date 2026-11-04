@@ -45,7 +45,10 @@ export async function importCueWithTimestampChoice(
     chooseGrouping: (missingCount: number) => Promise<boolean | undefined>
 ): Promise<ImportResult | undefined> {
     const source = createImportSource(text);
-    const missingCount = source.tracks.filter(track => !track.timestamp).length;
+    // The first track may legitimately lack a timecode and starts at 00:00:00.
+    const missingCount = source.tracks
+        .slice(1)
+        .filter(track => !track.timestamp).length;
     let groupUntimestampedTracks = options.groupUntimestampedTracks;
 
     if (missingCount > 0) {
@@ -59,7 +62,6 @@ export async function importCueWithTimestampChoice(
 }
 
 function importSource(source: ImportSource, options: ImportOptions): ImportResult {
-
     const sourceTitle =
         options.sourceTitle ??
         source.metadata.title;
@@ -125,13 +127,13 @@ function createImportSource(text: string): ImportSource {
 
 function countIds(tracks: Track[]): number {
     return tracks.reduce((total, track) => {
-        const mainId = /^ID\d+(?:\s|$)/u.test(track.title)
+        const mainId = /^ID\\d+(?:\\s|$)/u.test(track.title)
             ? 1
             : 0;
 
         const withTrackIds = track.withTracks.filter(
             withTrack =>
-                /^ID\d+(?:\s|$)/u.test(withTrack.title)
+                /^ID\\d+(?:\\s|$)/u.test(withTrack.title)
         ).length;
 
         return total + mainId + withTrackIds;

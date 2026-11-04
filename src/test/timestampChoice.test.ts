@@ -53,6 +53,28 @@ suite("Missing timecode import choice", () => {
         ), undefined);
     });
 
+    test("an untimestamped first track alone does not prompt", async () => {
+        const text = "01\\nA - Opening\\n02\\n00:30\\nB - Timed";
+        let prompted = false;
+        const result = await importCueWithTimestampChoice(text, {}, async () => {
+            prompted = true;
+            return false;
+        });
+        assert.strictEqual(prompted, false);
+        assert.ok(result?.cueText.startsWith(
+            'TRACK 01 AUDIO\\n  TITLE "Opening [Mixed]"\\n  PERFORMER "A"\\n  INDEX 01 00:00:00'
+        ));
+    });
+
+    test("an untimestamped first track does not count toward the prompt", async () => {
+        const text = "01\\nA - Opening\\n02\\nB - Untimed\\n03\\n00:30\\nC - Timed";
+        const result = await importCueWithTimestampChoice(text, {}, async count => {
+            assert.strictEqual(count, 1);
+            return false;
+        });
+        assert.strictEqual((result?.cueText.match(/^TRACK /gm) ?? []).length, 3);
+    });
+
     test("fully timed lists and empty input do not prompt", async () => {
         for (const text of ["01\n00:00\nA - Track\nw/\nB - Vocal", ""]) {
             const result = await importCueWithTimestampChoice(text, {}, async () => {
